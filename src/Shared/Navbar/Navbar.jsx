@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
@@ -9,6 +9,7 @@ const Navbar = () => {
     logOut()
     .then(() => {
       console.log("Signing out successfully!");
+      alert("Signing out successfully!");
     })
     .catch(err => {
       console.log(err.message);
@@ -83,16 +84,36 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          {user ? (
-            <button onClick={handleSignOut} className="bg-secondary-color text-white h-10 w-24 text-lg font-semibold rounded">
-              Sign Out
-            </button>
+        {user ? (
+            <div className="dropdown dropdown-bottom dropdown-end">
+              <label tabIndex={0} className="">
+                <div className="avatar online cursor-pointer">
+                  <div className="w-10 rounded-full">
+                    <img src={user.photoURL? user.photoURL : "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"} />
+                  </div>
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="dropdown-content z-[1] mt-3  p-3 shadow  rounded-box bg-[#0a0d1d] w-36 md:w-52"
+              >
+                <p className="text-sm text-center md:text-lg md:font-semibold">{user.displayName ? user.displayName : "Username"}</p>
+                <li>
+                  <button
+                    onClick={handleSignOut}
+                    className=" w-full hover:text-secondary-color lg:text-lg lg:font-semibold "
+                  >
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            </div>
           ) : (
-            <NavLink to="/signIn">
-              <button className="bg-secondary-color text-white h-10 w-24 text-lg font-semibold rounded">
-                Sign in
+            <Link to="/signIn">
+              <button className="h-11 w-24 py-1 px-3 rounded-lg bg-secondary-color font-semibold text-lg duration-500 hover:bg-primary-color hover:text-secondary-color hover:border-2 hover:border-secondary-color">
+              Sign in
               </button>
-            </NavLink>
+            </Link>
           )}
         </div>
       </div>
