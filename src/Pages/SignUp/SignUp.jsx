@@ -2,12 +2,24 @@ import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { BsEyeSlash, BsGithub } from "react-icons/bs";
 import { BsEye } from "react-icons/bs";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const SignUp = () => {
   const [type, setType] = useState(false);
+  const {createUser, googleSignIn} = useContext(AuthContext);
 
-  const handleLogin = (event) => {
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+    .then(res => {
+      console.log(res.user);
+    })
+    .catch(err => {
+      console.log(err.message);
+    })
+  };
+
+  const handleSignUp = (event) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const name = form.get("name");
@@ -15,6 +27,14 @@ const SignUp = () => {
     const email = form.get("email");
     const password = form.get("password");
     console.log(name, photo, email, password);
+
+    createUser(email, password)
+    .then(res => {
+      console.log(res.user);
+    })
+    .catch(err => {
+      console.log(err.message);
+    });
   };
 
   return (
@@ -28,7 +48,7 @@ const SignUp = () => {
         <div className="md:w-3/4 mx-auto px-5 md:px-10 lg:px-0  md:pb-8 rounded-lg">
           <div className="md:px-14 px-8 py-6 rounded-md border border-secondary-color">
             <h1 className="font-bold uppercase text-2xl text-secondary-color">Sign Up</h1>
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleSignUp}>
               <div>
                 <input
                   type="name"
@@ -44,7 +64,6 @@ const SignUp = () => {
                   type="text"
                   name="photo"
                   id="photo"
-                  required
                   placeholder="Photo URL"
                   className="mt-6 outline-none border-b-2 border-[#C5C5C5] py-2 placeholder:text-[#C5C5C5]  bg-transparent  w-full"
                 />
@@ -109,7 +128,7 @@ const SignUp = () => {
           </div>
           <div className="divider px-10 text-[#C5C5C5]">Or</div>
           <div className="space-y-3 px-10">
-            <button className="w-full border-2 border-secondary-color py-2  rounded-lg">
+            <button onClick={handleGoogleSignIn} className="w-full border-2 border-secondary-color py-2  rounded-lg">
               <FcGoogle className="inline mr-5 text-lg" />
               Continue with Google
             </button>

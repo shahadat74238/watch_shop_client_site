@@ -4,7 +4,8 @@ const Home = () => {
 
     return (
         <div>
-            <h1>Hollo World !</h1>
+            <h1>Hollo World !
+            </h1>
         </div>
     );
 };

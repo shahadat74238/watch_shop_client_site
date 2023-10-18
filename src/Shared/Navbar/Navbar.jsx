@@ -1,12 +1,30 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleSignOut = () => {
+    logOut()
+    .then(() => {
+      console.log("Signing out successfully!");
+    })
+    .catch(err => {
+      console.log(err.message);
+    })
+  };
+
   const navLinks = (
     <>
       <li>
         <NavLink
           to="/"
-          className={({ isActive }) => (isActive ? "border-b-2 border-secondary-color text-secondary-color" : " duration-200 hover:text-secondary-color hover:border-b-2 hover:border-secondary-color")}
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-2 border-secondary-color text-secondary-color"
+              : " duration-200 hover:text-secondary-color hover:border-b-2 hover:border-secondary-color"
+          }
         >
           Home
         </NavLink>
@@ -14,12 +32,15 @@ const Navbar = () => {
       <li>
         <NavLink
           to="/signUp"
-          className={({ isActive }) => (isActive ? "border-b-2 border-secondary-color text-secondary-color" : " duration-200 hover:text-secondary-color hover:border-b-2 hover:border-secondary-color")}
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-2 border-secondary-color text-secondary-color"
+              : " duration-200 hover:text-secondary-color hover:border-b-2 hover:border-secondary-color"
+          }
         >
           Sign Up
         </NavLink>
       </li>
-      
     </>
   );
 
@@ -51,16 +72,28 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className=" uppercase font-bold text-3xl"><span className="text-secondary-color">Wat</span>ches</a>
+          <a className=" uppercase font-bold text-3xl">
+            <span className="text-secondary-color">Wat</span>ches
+          </a>
         </div>
         {/* Desktop */}
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu-horizontal text-lg font-semibold gap-5 px-1">{navLinks}</ul>
+          <ul className="menu-horizontal text-lg font-semibold gap-5 px-1">
+            {navLinks}
+          </ul>
         </div>
         <div className="navbar-end">
-          <NavLink to="/signIn">
-          <button className="bg-secondary-color text-white h-10 w-24 text-lg font-semibold rounded">Sign in</button>
-          </NavLink>
+          {user ? (
+            <button onClick={handleSignOut} className="bg-secondary-color text-white h-10 w-24 text-lg font-semibold rounded">
+              Sign Out
+            </button>
+          ) : (
+            <NavLink to="/signIn">
+              <button className="bg-secondary-color text-white h-10 w-24 text-lg font-semibold rounded">
+                Sign in
+              </button>
+            </NavLink>
+          )}
         </div>
       </div>
     </div>
