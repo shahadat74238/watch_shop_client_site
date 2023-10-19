@@ -1,19 +1,20 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
   const handleSignOut = () => {
     logOut()
-    .then(() => {
-      console.log("Signing out successfully!");
-      alert("Signing out successfully!");
-    })
-    .catch(err => {
-      console.log(err.message);
-    })
+      .then(() => {
+        console.log("Signing out successfully!");
+        toast.success('Successfully Sign In!')
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   };
 
   const navLinks = (
@@ -30,16 +31,29 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
+
       <li>
         <NavLink
-          to="/signUp"
+          to="/addProduct"
           className={({ isActive }) =>
             isActive
               ? "border-b-2 border-secondary-color text-secondary-color"
               : " duration-200 hover:text-secondary-color hover:border-b-2 hover:border-secondary-color"
           }
         >
-          Sign Up
+          Add Product
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/myCard"
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-2 border-secondary-color text-secondary-color"
+              : " duration-200 hover:text-secondary-color hover:border-b-2 hover:border-secondary-color"
+          }
+        >
+          My Card
         </NavLink>
       </li>
     </>
@@ -47,7 +61,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-primary-color text-white">
-      <div className="navbar container mx-auto">
+      <div className="navbar container mx-auto px-5 md:px-10">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -84,12 +98,18 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-        {user ? (
+          {user ? (
             <div className="dropdown dropdown-bottom dropdown-end">
               <label tabIndex={0} className="">
                 <div className="avatar online cursor-pointer">
                   <div className="w-10 rounded-full">
-                    <img src={user.photoURL? user.photoURL : "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"} />
+                    <img
+                      src={
+                        user.photoURL
+                          ? user.photoURL
+                          : "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
+                      }
+                    />
                   </div>
                 </div>
               </label>
@@ -97,7 +117,9 @@ const Navbar = () => {
                 tabIndex={0}
                 className="dropdown-content z-[1] mt-3  p-3 shadow  rounded-box bg-[#0a0d1d] w-36 md:w-52"
               >
-                <p className="text-sm text-center md:text-lg md:font-semibold">{user.displayName ? user.displayName : "Username"}</p>
+                <p className="text-sm text-center md:text-lg md:font-semibold">
+                  {user.displayName ? user.displayName : "Username"}
+                </p>
                 <li>
                   <button
                     onClick={handleSignOut}
@@ -110,13 +132,14 @@ const Navbar = () => {
             </div>
           ) : (
             <Link to="/signIn">
-              <button className="h-11 w-24 py-1 px-3 rounded-lg bg-secondary-color font-semibold text-lg duration-500 hover:bg-primary-color hover:text-secondary-color hover:border-2 hover:border-secondary-color">
-              Sign in
+              <button className="primary-btn w-24">
+                Sign in
               </button>
             </Link>
           )}
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };

@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.primary-btn{
+    @apply h-11  rounded bg-secondary-color font-semibold text-lg duration-500 hover:bg-transparent hover:text-secondary-color hover:border-2 hover:border-secondary-color
+}

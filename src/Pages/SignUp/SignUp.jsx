@@ -1,9 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { BsEyeSlash, BsGithub } from "react-icons/bs";
+import { BsEyeSlash} from "react-icons/bs";
 import { BsEye } from "react-icons/bs";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const SignUp = () => {
   const [type, setType] = useState(false);
@@ -15,7 +17,7 @@ const SignUp = () => {
     googleSignIn()
       .then((res) => {
         console.log(res.user);
-        alert("Signing Successfully!")
+        toast.success('Successfully Sign In!')
         // Navigate
         navigate(location?.state ? location.state : "/");
       })
@@ -53,6 +55,9 @@ const SignUp = () => {
           window.location.reload();
         });
         console.log(res.user);
+        toast.success('Successfully Sign In!')
+        // Navigate
+        navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         console.log(err.message);
@@ -66,7 +71,7 @@ const SignUp = () => {
           Login
         </h1>
       </div>
-      <div className="max-w-7xl mx-auto py-10 justify-between items-center grid grid-cols-1 lg:grid-cols-2">
+      <div className="container mx-auto py-10 justify-between items-center grid grid-cols-1 lg:grid-cols-2">
         <div className="md:w-3/4 mx-auto px-5 md:px-10 lg:px-0  md:pb-8 rounded-lg">
           <div className="md:px-14 px-8 py-6 rounded-md border border-secondary-color">
             <h1 className="font-bold uppercase text-2xl text-secondary-color">
@@ -156,10 +161,7 @@ const SignUp = () => {
               <FcGoogle className="inline mr-5 text-lg" />
               Continue with Google
             </button>
-            <button className="w-full border-2 border-secondary-color py-2  rounded-lg">
-              <BsGithub className="inline mr-5 text-lg" />
-              Continue with Github
-            </button>
+            
           </div>
         </div>
         <div className="hidden lg:visible lg:block">
@@ -169,6 +171,7 @@ const SignUp = () => {
           />
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };
