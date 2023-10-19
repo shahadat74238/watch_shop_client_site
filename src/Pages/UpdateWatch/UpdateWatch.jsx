@@ -2,7 +2,8 @@ import { useLoaderData } from "react-router-dom";
 
 const UpdateWatch = () => {
   const watch = useLoaderData();
-  const { image, name, price, rating, } = watch;
+  const { _id, image, name, price, rating, } = watch;
+
   const handleUpdateWatch = (event) => {
     event.preventDefault();
 
@@ -13,24 +14,26 @@ const UpdateWatch = () => {
     const type = form.type.value;
     const price = form.price.value;
     const rating = form.rating.value;
-    const description = form.description.value;
 
-    const newWatch = {
+    const updatedWatch = {
       image,
       name,
       brand,
       type,
       price,
       rating,
-      description,
     };
-    console.log(newWatch);
+    console.log(updatedWatch);
 
-    fetch("http://localhost:3001/watches", )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
+    fetch(`http://localhost:3001/watches/${_id}`, {
+      method: 'PUT',
+      headers: { 'content-type': 'application/json'},
+      body: JSON.stringify(updatedWatch)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+    })
   };
 
   return (

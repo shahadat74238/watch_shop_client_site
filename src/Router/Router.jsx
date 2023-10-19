@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         path: "/watches/:id",
         element: <WatchDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3001/watch/${params.id}`),
+          fetch(`http://localhost:3001/watches/${params.id}`),
       },
       {
         path: "/addProduct",
@@ -40,11 +40,15 @@ const router = createBrowserRouter([
         path: "/update/:id",
         element: <UpdateWatch />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3001/watch/${params.id}`),
+          fetch(`http://localhost:3001/watches/${params.id}`),
       },
       {
         path: "/brand/:brandName",
-        element: <BrandProducts />,
+        element: (
+          <PrivetRoute>
+            <BrandProducts />
+          </PrivetRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:3001/watchBrand/${params.brandName}`),
       },
