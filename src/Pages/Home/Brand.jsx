@@ -14,24 +14,24 @@ const Brand = () => {
 
   return (
     <div>
-      <div className="px-5">
-        <h1 className="text-3xl uppercase underline font-bold mb-10 text-center">
+      <div className="">
+        <h1 className="text-3xl uppercase font-bold mb-10 text-center">
           Our Brands
         </h1>
         <div className="">
-          <div className="space-y-3">
+          <div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {brands.map((brand) => (
               <div key={brand._id}>
                 <Link to={`/brand/${brand.name}`}>
-                  <div className="cursor-pointer h-10 w-full relative rounded overflow-hidden border">
-                    <div className="absolute duration-500 hover:bg-primary-color/60  w-full flex items-center justify-center">
-                      <div className="h-10">
-                        <h1 className=" text-secondary-color text-2xl font-bold ">
+                  <div className="cursor-pointer h-40 w-full  relative rounded-lg overflow-hidden border">
+                    <div className="absolute duration-500 hover:bg-primary-color/90 bg-primary-color/60  w-full flex items-center justify-center h-40">
+                      <div className="">
+                        <h1 className=" text-secondary-color text-4xl uppercase font-bold ">
                           {brand.name}
                         </h1>
                       </div>
                     </div>
-                    <div className="h-10">
+                    <div className="h-40">
                       <img
                         className="object-cover h-full w-full"
                         src={brand.image}

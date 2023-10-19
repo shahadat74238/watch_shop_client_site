@@ -10,15 +10,15 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <div className="container px-5 md:px-10 mx-auto my-20 grid gap-6 lg:grid-cols-4 ">
-        <div className="lg:col-span-1 border">
+      <div className="container px-5 md:px-10 mx-auto my-20 grid gap-6  ">
+        <div className="">
           <Brand />
         </div>
         {/* Card Container */}
-        <div className="lg:col-span-3">
-          <h1 className="text-5xl font-bold mb-10 text-center">New Watches</h1>
-          <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2  gap-6">
-            {watches.map((watch) => (
+        <div className="my-10">
+          <h1 className="text-4xl uppercase font-bold mb-10 text-center">New Watches</h1>
+          <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2  gap-6">
+            {watches.slice(0, 4).map((watch) => (
               <Watch key={watch._id} watch={watch} />
             ))}
           </div>

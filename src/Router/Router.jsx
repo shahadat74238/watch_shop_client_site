@@ -7,6 +7,9 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AddProducts from "../Pages/AddProduct/AddProducts";
 import MyCard from "../Pages/MyCard/MyCard";
 import BrandProducts from "../Pages/BrandProducts/BrandProducts";
+import WatchDetails from "../Pages/WatchDetails/WatchDetails";
+import PrivetRoute from "../PrivetRoute/PrivetRoute";
+import UpdateWatch from "../Pages/UpdateWatch/UpdateWatch";
 
 const router = createBrowserRouter([
   {
@@ -17,20 +20,41 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch('http://localhost:3001/watches')
+        loader: () => fetch("http://localhost:3001/watches"),
+      },
+      {
+        path: "/watches/:id",
+        element: <WatchDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3001/watch/${params.id}`),
       },
       {
         path: "/addProduct",
-        element: <AddProducts />
+        element: (
+          <PrivetRoute>
+            <AddProducts />
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/update/:id",
+        element: <UpdateWatch />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3001/watch/${params.id}`),
       },
       {
         path: "/brand/:brandName",
         element: <BrandProducts />,
-        loader: ({params}) => fetch(`http://localhost:3001/watches/${params.brandName}`)
+        loader: ({ params }) =>
+          fetch(`http://localhost:3001/watchBrand/${params.brandName}`),
       },
       {
         path: "/myCard",
-        element: <MyCard />
+        element: (
+          <PrivetRoute>
+            <MyCard />
+          </PrivetRoute>
+        ),
       },
       {
         path: "/signUp",
