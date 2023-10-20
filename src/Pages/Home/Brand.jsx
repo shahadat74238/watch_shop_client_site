@@ -15,8 +15,8 @@ const Brand = () => {
   return (
     <div>
       <div className="">
-        <h1 className="text-3xl uppercase font-bold mb-10 text-center">
-          Our Brands
+        <h1 className="text-4xl uppercase font-bold mb-10 text-center">
+          Our Trusted Brands
         </h1>
         <div className="">
           <div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -24,9 +24,9 @@ const Brand = () => {
               <div key={brand._id}>
                 <Link to={`/brand/${brand.name}`}>
                   <div className="cursor-pointer h-40 w-full  relative rounded-lg overflow-hidden border">
-                    <div className="absolute duration-500 hover:bg-primary-color/90 bg-primary-color/60  w-full flex items-center justify-center h-40">
+                    <div className="absolute duration-500 hover:bg-primary-color/90 bg-primary-color/60   w-full flex items-center justify-center h-40">
                       <div className="">
-                        <h1 className=" text-secondary-color text-4xl uppercase font-bold ">
+                        <h1 className=" text-white text-4xl uppercase font-bold ">
                           {brand.name}
                         </h1>
                       </div>

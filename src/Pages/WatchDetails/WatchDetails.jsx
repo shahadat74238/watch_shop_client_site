@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import toast, { Toaster } from 'react-hot-toast';
 
 const WatchDetails = () => {
   const watch = useLoaderData();
@@ -17,6 +18,7 @@ const WatchDetails = () => {
     .then(res => res.json())
     .then(data => {
       console.log(data);
+      toast.success('Added Card Successfully!')
     })
   };
 
@@ -44,6 +46,7 @@ const WatchDetails = () => {
           </div>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };

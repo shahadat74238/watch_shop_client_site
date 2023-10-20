@@ -1,6 +1,14 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.jost-font{
+    font-family: 'Jost', sans-serif;
+}
 
 .primary-btn{
     @apply h-11  rounded bg-secondary-color font-semibold text-lg duration-500 hover:bg-transparent hover:text-secondary-color hover:border-2 hover:border-secondary-color

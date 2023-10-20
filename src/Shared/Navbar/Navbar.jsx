@@ -31,6 +31,18 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/allWatches"
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-2 border-secondary-color text-secondary-color"
+              : " duration-200 hover:text-secondary-color hover:border-b-2 hover:border-secondary-color"
+          }
+        >
+          All Watches
+        </NavLink>
+      </li>
 
       <li>
         <NavLink
@@ -82,7 +94,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu-sm   dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className=" dropdown-content mt-3 z-[1] py-3 px-4 shadow text-secondary-color bg-primary-color w-32"
             >
               {navLinks}
             </ul>

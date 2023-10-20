@@ -10,6 +10,7 @@ const SignIn = () => {
   const {signIn, googleSignIn} = useContext(AuthContext);
   const navigate = useNavigate();
   const [type, setType] = useState(false);
+  const [error, setError] = useState("");
 
   const handleGoogleSignIn = () => {
     googleSignIn()
@@ -38,8 +39,8 @@ const SignIn = () => {
       // Navigate
       navigate(location?.state ? location.state : "/");
     })
-    .catch(err => {
-      console.log(err.message);
+    .catch(() => {
+      setError("Your Email/Password is wrong!")
     });
   };
 
@@ -84,7 +85,7 @@ const SignIn = () => {
                 </span>
               </div>
               <div className="mt-3">
-                <p className="text-red-700 font-semibold">Show error</p>
+                <p className="text-red-700 font-semibold">{error}</p>
               </div>
               <div className="flex justify-between items-center mt-6">
                 <div className="flex items-center">

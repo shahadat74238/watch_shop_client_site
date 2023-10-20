@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Watch = ({ watch }) => {
   const { _id, image, name, brand, price } = watch;
   return (
-    <div className="bg-[#f5f5f5]">
+    <div className="bg-[#f5f5f5] ">
       <div className="overflow-hidden">
         <img
           className="scale-100 hover:scale-110 duration-500"

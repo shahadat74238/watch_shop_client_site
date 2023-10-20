@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2'
+
 const AddProducts = () => {
   const handleAddWatch = (event) => {
     event.preventDefault();
@@ -30,7 +32,15 @@ const AddProducts = () => {
     .then(res => res.json())
     .then(data => {
       console.log(data);
-    })
+      if (data.insertedId) {
+        Swal.fire({
+          title: "Success!",
+          text: "Watch Added Successfully !",
+          icon: "success",
+        });
+      }
+    });
+    
   };
 
   return (

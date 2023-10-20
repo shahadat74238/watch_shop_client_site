@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 const UpdateWatch = () => {
   const watch = useLoaderData();
@@ -31,9 +32,16 @@ const UpdateWatch = () => {
       body: JSON.stringify(updatedWatch)
     })
     .then(res => res.json())
-    .then(data => {
+    .then((data) => {
       console.log(data);
-    })
+      if (data.modifiedCount > 0) {
+        Swal.fire({
+          title: "Success!",
+          text: "Watch Updated!",
+          icon: "success",
+        });
+      }
+    });
   };
 
   return (

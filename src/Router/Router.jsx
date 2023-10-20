@@ -10,6 +10,7 @@ import BrandProducts from "../Pages/BrandProducts/BrandProducts";
 import WatchDetails from "../Pages/WatchDetails/WatchDetails";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
 import UpdateWatch from "../Pages/UpdateWatch/UpdateWatch";
+import AllWatches from "../Pages/AllWatches/AllWatches";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        loader: () => fetch("http://localhost:3001/watches"),
+      },
+      {
+        path: "/allWatches",
+        element: <AllWatches />,
         loader: () => fetch("http://localhost:3001/watches"),
       },
       {

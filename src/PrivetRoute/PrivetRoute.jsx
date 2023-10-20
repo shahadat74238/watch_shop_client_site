@@ -4,10 +4,10 @@ import { PropTypes } from 'prop-types';
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const PrivetRoute = ({children}) => {
-    const {user, loading} = useContext(AuthContext);
+    const {user, loader} = useContext(AuthContext);
     const location = useLocation();
     
-    if(loading){
+    if(loader){
         return <div>
             <h1>Loading data.</h1>
         </div>
