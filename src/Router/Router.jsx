@@ -24,7 +24,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/watches/:id",
-        element: <WatchDetails />,
+        element: (
+          <PrivetRoute>
+            <WatchDetails />
+          </PrivetRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:3001/watches/${params.id}`),
       },
@@ -59,6 +63,7 @@ const router = createBrowserRouter([
             <MyCard />
           </PrivetRoute>
         ),
+        loader:() => fetch("http://localhost:3001/card"),
       },
       {
         path: "/signUp",

@@ -50,8 +50,8 @@ const SignIn = () => {
           Sign in
         </h1>
       </div>
-      <div className="container mx-auto py-10 items-center justify-between grid grid-cols-1 lg:grid-cols-2">
-        <div className="md:w-3/4 mx-auto px-5 md:px-10 lg:px-0  md:pb-8 rounded-lg">
+      <div className="container mx-auto py-10 items-center justify-between ">
+        <div className="md:w-2/3 lg:w-2/5 mx-auto px-5 md:px-10 lg:px-0  md:pb-8 rounded-lg">
           <div className="md:px-14 px-8 py-6 rounded-md border border-secondary-color">
             <h1 className="font-bold uppercase text-2xl text-secondary-color">Sign In</h1>
             <form onSubmit={handleSignIn}>
@@ -122,12 +122,7 @@ const SignIn = () => {
             
           </div>
         </div>
-        <div className="hidden lg:visible lg:block">
-          <img
-            src="https://i.ibb.co/b58qWVG/undraw-Access-account-re-8spm.png"
-            alt=""
-          />
-        </div>
+        
       </div>
       <Toaster />
     </div>

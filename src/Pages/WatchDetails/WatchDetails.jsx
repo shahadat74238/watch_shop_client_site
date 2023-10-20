@@ -4,6 +4,22 @@ const WatchDetails = () => {
   const watch = useLoaderData();
   const { image, name, brand, type, price, rating, description } = watch;
 
+  const handleAddToCard = () => {
+    const watchAdded = {image, name, brand, type, price, rating,};
+    console.log(watchAdded);
+
+    // send data to mongodb.
+    fetch('http://localhost:3001/card', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json'},
+      body: JSON.stringify(watchAdded)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+    })
+  };
+
   return (
     <div>
       <div className="container px-5 md:px-10 mx-auto grid items-center gap-6 grid-cols-1 md:grid-cols-2 h-screen my-10">
@@ -24,7 +40,7 @@ const WatchDetails = () => {
           <h1 className="text-center font-bold text-2xl underline mb-3">Specification</h1>
           <p className="font-semibold text-justify">{description}</p>
           <div className="mt-5">
-            <button className="primary-btn w-36 text-white">Add To Card</button>
+            <button onClick={handleAddToCard} className="primary-btn w-36 text-white">Add To Card</button>
           </div>
         </div>
       </div>
