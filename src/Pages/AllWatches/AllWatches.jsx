@@ -18,7 +18,7 @@ const AllWatches = () => {
                 <div className="bg-[#f5f5f5] ">
                   <div className="overflow-hidden">
                     <img
-                      className="scale-100 hover:scale-110 duration-500"
+                      className="scale-100 hover:scale-110 h-60 w-full object-cover duration-500"
                       src={watch.image}
                       alt="Loading Image"
                     />

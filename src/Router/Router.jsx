@@ -21,12 +21,18 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:3001/watches"),
+        loader: () =>
+          fetch(
+            "https://watch-server-p2yuywbpr-md-shahadat-hosens-projects.vercel.app/watches"
+          ),
       },
       {
         path: "/allWatches",
         element: <AllWatches />,
-        loader: () => fetch("http://localhost:3001/watches"),
+        loader: () =>
+          fetch(
+            "https://watch-server-p2yuywbpr-md-shahadat-hosens-projects.vercel.app/watches"
+          ),
       },
       {
         path: "/watches/:id",
@@ -36,7 +42,9 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3001/watches/${params.id}`),
+          fetch(
+            `https://watch-server-p2yuywbpr-md-shahadat-hosens-projects.vercel.app/watches/${params.id}`
+          ),
       },
       {
         path: "/addProduct",
@@ -50,7 +58,9 @@ const router = createBrowserRouter([
         path: "/update/:id",
         element: <UpdateWatch />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3001/watches/${params.id}`),
+          fetch(
+            `https://watch-server-p2yuywbpr-md-shahadat-hosens-projects.vercel.app/watches/${params.id}`
+          ),
       },
       {
         path: "/brand/:brandName",
@@ -60,7 +70,9 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3001/watchBrand/${params.brandName}`),
+          fetch(
+            `https://watch-server-p2yuywbpr-md-shahadat-hosens-projects.vercel.app/watchBrand/${params.brandName}`
+          ),
       },
       {
         path: "/myCard",
@@ -69,7 +81,10 @@ const router = createBrowserRouter([
             <MyCard />
           </PrivetRoute>
         ),
-        loader:() => fetch("http://localhost:3001/card"),
+        loader: () =>
+          fetch(
+            "https://watch-server-p2yuywbpr-md-shahadat-hosens-projects.vercel.app/card"
+          ),
       },
       {
         path: "/signUp",

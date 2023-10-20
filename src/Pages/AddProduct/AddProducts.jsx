@@ -1,4 +1,4 @@
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 const AddProducts = () => {
   const handleAddWatch = (event) => {
@@ -24,23 +24,25 @@ const AddProducts = () => {
     };
     console.log(newWatch);
 
-    fetch('http://localhost:3001/watches', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json'},
-      body: JSON.stringify(newWatch)
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-      if (data.insertedId) {
-        Swal.fire({
-          title: "Success!",
-          text: "Watch Added Successfully !",
-          icon: "success",
-        });
+    fetch(
+      "https://watch-server-p2yuywbpr-md-shahadat-hosens-projects.vercel.app/watches",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(newWatch),
       }
-    });
-    
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Watch Added Successfully !",
+            icon: "success",
+          });
+        }
+      });
   };
 
   return (
@@ -80,7 +82,11 @@ const AddProducts = () => {
                     <div className="pb-6">
                       <p className="pb-4">Brand Name</p>
 
-                      <select className="select w-full rounded-none" required name="brand">
+                      <select
+                        className="select w-full rounded-none"
+                        required
+                        name="brand"
+                      >
                         <option>Rolex</option>
                         <option>Apple</option>
                         <option>Casio</option>
@@ -94,7 +100,11 @@ const AddProducts = () => {
                     <div className="pb-6">
                       <p className="pb-4">Type</p>
 
-                      <select className="select w-full rounded-none" required name="type">
+                      <select
+                        className="select w-full rounded-none"
+                        required
+                        name="type"
+                      >
                         <option>Smartwatch</option>
                         <option>Dual Time Watch</option>
                         <option>Digital Watch</option>

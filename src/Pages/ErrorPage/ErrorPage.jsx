@@ -6,8 +6,8 @@ const ErrorPage = () => {
       <div className="">
         <h1 className="text-3xl font-bold md:text-6xl mb-5 text-primary-color">PAGE NOT FOUND</h1>
         <div className="flex justify-center">
-        <Link>
-          <button className="btn-primary w-36">GO TO HOME</button>
+        <Link to="/">
+          <button className="primary-btn text-white w-52">GO TO HOME</button>
         </Link>
         </div>
       </div>

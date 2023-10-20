@@ -1,9 +1,9 @@
 import { useLoaderData } from "react-router-dom";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 const UpdateWatch = () => {
   const watch = useLoaderData();
-  const { _id, image, name, price, rating, } = watch;
+  const { _id, image, name, price, rating } = watch;
 
   const handleUpdateWatch = (event) => {
     event.preventDefault();
@@ -26,22 +26,25 @@ const UpdateWatch = () => {
     };
     console.log(updatedWatch);
 
-    fetch(`http://localhost:3001/watches/${_id}`, {
-      method: 'PUT',
-      headers: { 'content-type': 'application/json'},
-      body: JSON.stringify(updatedWatch)
-    })
-    .then(res => res.json())
-    .then((data) => {
-      console.log(data);
-      if (data.modifiedCount > 0) {
-        Swal.fire({
-          title: "Success!",
-          text: "Watch Updated!",
-          icon: "success",
-        });
+    fetch(
+      `https://watch-server-p2yuywbpr-md-shahadat-hosens-projects.vercel.app/watches/${_id}`,
+      {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(updatedWatch),
       }
-    });
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Success!",
+            text: "Watch Updated!",
+            icon: "success",
+          });
+        }
+      });
   };
 
   return (

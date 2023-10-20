@@ -5,7 +5,9 @@ const Brand = () => {
   const [brands, setBrands] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/brands")
+    fetch(
+      "https://watch-server-p2yuywbpr-md-shahadat-hosens-projects.vercel.app/brands"
+    )
       .then((res) => res.json())
       .then((data) => {
         setBrands(data);
@@ -48,6 +50,5 @@ const Brand = () => {
     </div>
   );
 };
-
 
 export default Brand;

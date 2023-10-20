@@ -1,17 +1,32 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
 
 // import required modules
-import { Navigation } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 const Slider = () => {
   return (
     <div>
       <div>
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
           <SwiperSlide>
             <div className="md:h-screen h-[60vh] bg-[url('https://wpbingosite.com/wordpress/wrish/wp-content/uploads/2021/08/slider-1-1.jpg')] bg-top bg-cover bg-no-repeat">
               <div className="bg-black/40 md:h-screen h-[60vh]">

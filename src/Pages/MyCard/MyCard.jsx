@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 const MyCard = () => {
   const loadedCardWatch = useLoaderData();
@@ -17,13 +17,16 @@ const MyCard = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3001/card/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://watch-server-p2yuywbpr-md-shahadat-hosens-projects.vercel.app/card/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            if (data.deletedCount > 0){
+            if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
               const remaining = loadedCardWatch.filter(
                 (watch) => watch._id !== _id
