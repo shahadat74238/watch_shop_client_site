@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Brand = () => {
   const [brands, setBrands] = useState([]);
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   useEffect(() => {
     fetch(
@@ -25,7 +32,12 @@ const Brand = () => {
             {brands.map((brand) => (
               <div key={brand._id}>
                 <Link to={`/brand/${brand.name}`}>
-                  <div className="cursor-pointer h-40 w-full  relative rounded-lg overflow-hidden border">
+                  <div
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom"
+                    data-aos-duration="1000"
+                    className="cursor-pointer h-40 w-full  relative rounded-lg overflow-hidden border"
+                  >
                     <div className="absolute duration-500 hover:bg-primary-color/90 bg-primary-color/60   w-full flex items-center justify-center h-40">
                       <div className="">
                         <h1 className=" text-white text-4xl uppercase font-bold ">

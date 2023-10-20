@@ -1,8 +1,16 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Brand from "../Home/Brand";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const AllWatches = () => {
   const watches = useLoaderData();
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   return (
     <div>
@@ -14,7 +22,12 @@ const AllWatches = () => {
           </h1>
           <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2  gap-6">
             {watches.map((watch) => (
-              <div key={watch._id}>
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className="bg-[#f5f5f5] "
+                key={watch._id}
+              >
                 <div className="bg-[#f5f5f5] ">
                   <div className="overflow-hidden">
                     <img
