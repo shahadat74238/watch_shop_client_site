@@ -17,6 +17,18 @@ const Footer = () => {
               Home
             </NavLink>
           </li>
+          <li>
+        <NavLink
+          to="/allWatches"
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-2 border-secondary-color text-secondary-color"
+              : " duration-200 hover:text-secondary-color hover:border-b-2 hover:border-secondary-color"
+          }
+        >
+          All Watches
+        </NavLink>
+      </li>
     
           <li>
             <NavLink
