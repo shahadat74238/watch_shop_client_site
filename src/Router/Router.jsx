@@ -81,10 +81,7 @@ const router = createBrowserRouter([
             <MyCard />
           </PrivetRoute>
         ),
-        loader: () =>
-          fetch(
-            "https://watch-server-p2yuywbpr-md-shahadat-hosens-projects.vercel.app/card"
-          ),
+       
       },
       {
         path: "/signUp",

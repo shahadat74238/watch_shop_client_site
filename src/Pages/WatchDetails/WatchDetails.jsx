@@ -1,12 +1,16 @@
 import { useLoaderData } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const WatchDetails = () => {
   const watch = useLoaderData();
+  const {user} = useContext(AuthContext);
+  const email = user.email;
   const { image, name, brand, type, price, rating, description } = watch;
 
   const handleAddToCard = () => {
-    const watchAdded = { image, name, brand, type, price, rating };
+    const watchAdded = { email,image, name, brand, type, price, rating };
     console.log(watchAdded);
 
     // send data to mongodb.
@@ -28,7 +32,7 @@ const WatchDetails = () => {
   return (
     <div>
       <div className="container px-5 md:px-10 mx-auto grid items-center gap-6 grid-cols-1 md:grid-cols-2 h-screen my-10">
-        <div className="w-rull h-full">
+        <div className="w-full h-full">
           <img className="w-full h-full object-cover" src={image} alt="" />
         </div>
         <div className="dark:text-white">
