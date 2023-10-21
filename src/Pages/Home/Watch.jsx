@@ -18,9 +18,9 @@ const Watch = ({ watch }) => {
       data-aos-duration="1000"
       className="bg-[#f5f5f5] dark:bg-primary-color"
     >
-      <div className="overflow-hidden">
+      <div className="overflow-hidden h-60">
         <img
-          className="scale-100 hover:scale-110 duration-500"
+          className="scale-100 h-full w-full object-cover hover:scale-110 duration-500"
           src={image}
           alt="Loading Image"
         />

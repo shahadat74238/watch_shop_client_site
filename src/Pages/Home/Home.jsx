@@ -14,8 +14,9 @@ const Home = () => {
         <div className="container px-5 md:px-10 mx-auto my-20 grid gap-6 ">
           <Brand />
         </div>
+        <div></div>
         <div>
-        <Featured />
+          <Featured />
         </div>
         {/* Card Container */}
         <div className="py-20">

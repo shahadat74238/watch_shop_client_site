@@ -65,12 +65,8 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen -mt-16">
-      <div className="h-[40vh] bg-primary-color  bg-cover bg-no-repeat bg-center">
-        <h1 className="text-3xl pt-[20vh] text-white font-bold text-center uppercase">
-          Login
-        </h1>
-      </div>
+    <div className="min-h-screen mt-16">
+      
       <div className="container mx-auto py-10 justify-between items-center">
         <div className="md:w-2/3 lg:w-2/5 mx-auto px-5 md:px-10 lg:px-0  md:pb-8 rounded-lg">
           <div className="md:px-14 px-8 py-6 rounded-md border border-secondary-color">
