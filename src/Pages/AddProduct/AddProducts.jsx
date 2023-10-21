@@ -115,7 +115,7 @@ const AddProducts = () => {
                       <p className="pb-4">Price</p>
                       <input
                         className="block w-full py-3 px-[1rem]"
-                        type="text "
+                        type="number"
                         required
                         name="price"
                         placeholder="Enter watch price"
@@ -125,7 +125,7 @@ const AddProducts = () => {
                       <p className="pb-4">Rating</p>
                       <input
                         className="block w-full py-3 px-[1rem]"
-                        type="text"
+                        type="number"
                         required
                         name="rating"
                         placeholder="Enter watch rating"

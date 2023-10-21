@@ -119,7 +119,7 @@ const UpdateWatch = () => {
                       <p className="pb-4">Price</p>
                       <input
                         className="block w-full py-3 px-[1rem]"
-                        type="text "
+                        type="number"
                         required
                         defaultValue={price}
                         name="price"
@@ -130,7 +130,7 @@ const UpdateWatch = () => {
                       <p className="pb-4">Rating</p>
                       <input
                         className="block w-full py-3 px-[1rem]"
-                        type="text"
+                        type="number"
                         required
                         defaultValue={rating}
                         name="rating"
