@@ -44,10 +44,10 @@ const MyCard = () => {
         <h1 className="uppercase text-center text-3xl font-bold my-10">
           My Card Products
         </h1>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto dark:text-white">
           <table className="table">
             {/* head */}
-            <thead>
+            <thead className="dark:text-white">
               <tr>
                 <th>SL</th>
                 <th>Name</th>

@@ -31,7 +31,7 @@ const WatchDetails = () => {
         <div className="w-rull h-full">
           <img className="w-full h-full object-cover" src={image} alt="" />
         </div>
-        <div className="">
+        <div className="dark:text-white">
           <p className="text-lg font-semibold">Price: ${price}</p>
           <h2 className="text-3xl font-bold">Model: {name}</h2>
           <div className="flex justify-between items-center my-2">

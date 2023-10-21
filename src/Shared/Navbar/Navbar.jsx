@@ -1,10 +1,24 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import toast, { Toaster } from 'react-hot-toast';
+import { CiLight } from 'react-icons/ci';
+import { MdDarkMode } from 'react-icons/md';
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [theme, setTheme] = useState(false);
+
+  const handleChange = () => {
+    if (theme === true) {
+      const htmlElement = document.querySelector("html");
+      htmlElement.setAttribute("class", "light");
+    } else {
+      const htmlElement = document.querySelector("html");
+      htmlElement.setAttribute("class", "dark");
+    }
+  };
+
 
   const handleSignOut = () => {
     logOut()
@@ -110,6 +124,17 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
+        <div className="mr-5">
+        <button
+          onClick={() => handleChange(setTheme(!theme))}
+          className=" h-8  w-8 p-1 rounded-full bg-white dark:bg-gray-900 dark:text-white text-black "
+        >
+          {
+            theme?  <CiLight className="text-2xl text-center" />:<MdDarkMode className="text-2xl text-center" /> 
+          }
+        </button>
+      </div>
+          <div>
           {user ? (
             <div className="dropdown dropdown-bottom dropdown-end">
               <label tabIndex={0} className="">
@@ -149,6 +174,7 @@ const Navbar = () => {
               </button>
             </Link>
           )}
+          </div>
         </div>
       </div>
       <Toaster />

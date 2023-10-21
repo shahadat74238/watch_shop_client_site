@@ -79,7 +79,7 @@ const SignIn = () => {
                 />
                 <span
                   onClick={() => setType(!type)}
-                  className="absolute cursor-pointer bottom-4 right-0"
+                  className="absolute cursor-pointer dark:text-white bottom-4 right-0"
                 >
                   {type ? <BsEye></BsEye> : <BsEyeSlash></BsEyeSlash>}
                 </span>
@@ -95,7 +95,7 @@ const SignIn = () => {
                     id="check "
                     className="cursor-pointer h-5 w-5 mr-3"
                   />
-                  <label htmlFor="check" className="">
+                  <label htmlFor="check" className="dark:text-white">
                     Remember Me
                   </label>
                 </div>
@@ -107,7 +107,7 @@ const SignIn = () => {
                 Sign In
               </button>
             </form>
-            <p className="mt-6 ">
+            <p className="mt-6 dark:text-white ">
               Don’t have an account?{" "}
               <Link to="/signUp" className="text-secondary-color underline">
                 Sign Up
@@ -116,7 +116,7 @@ const SignIn = () => {
           </div>
           <div className="divider px-10 text-[#C5C5C5]">Or</div>
           <div className="space-y-3 px-10">
-            <button onClick={handleGoogleSignIn} className="w-full border-2 border-secondary-color py-2  rounded-lg">
+            <button onClick={handleGoogleSignIn} className="w-full border-2 border-secondary-color py-2 dark:text-white rounded-lg">
               <FcGoogle className="inline mr-5 text-lg" />
               Continue with Google
             </button>

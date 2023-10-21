@@ -16,7 +16,7 @@ const Watch = ({ watch }) => {
     <div
     data-aos="flip-left"
       data-aos-duration="1000"
-      className="bg-[#f5f5f5] "
+      className="bg-[#f5f5f5] dark:bg-primary-color"
     >
       <div className="overflow-hidden">
         <img
@@ -26,11 +26,11 @@ const Watch = ({ watch }) => {
         />
       </div>
       <div className="text-center  pt-3">
-        <h3 className="text-2xl font-bold">{brand}</h3>
+        <h3 className="text-2xl text-primary-color dark:text-white font-bold">{brand}</h3>
         <h1 className="text-lg text-secondary-color my-2 font-semibold">
           {name}
         </h1>
-        <p className="font-bold">${price}</p>
+        <p className="font-bold text-primary-color dark:text-white">${price}</p>
         <div className="mt-3">
           <Link to={`/watches/${_id}`}>
             <button className="primary-btn text-white w-full">Details</button>

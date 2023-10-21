@@ -24,7 +24,7 @@ const Brand = () => {
   return (
     <div>
       <div className="">
-        <h1 className="text-4xl uppercase font-bold mb-10 text-center">
+        <h1 className="text-4xl dark:text-white text-primary-color uppercase font-bold mb-10 text-center">
           Our Trusted Brands
         </h1>
         <div className="">
