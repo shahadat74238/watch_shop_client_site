@@ -28,7 +28,7 @@ const MyCard = () => {
             console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
-              const remaining = loadedCardWatch.filter(
+              const remaining = cardWatch.filter(
                 (watch) => watch._id !== _id
               );
               setCardWatch(remaining);
@@ -40,6 +40,8 @@ const MyCard = () => {
 
   return (
     <div className="min-h-screen">
+      {
+        cardWatch.length > 0 ?
       <div className="container mx-auto px-5 md:px-10 my-20">
         <h1 className="uppercase text-center text-3xl font-bold my-10">
           My Card Products
@@ -78,6 +80,15 @@ const MyCard = () => {
           </table>
         </div>
       </div>
+      : 
+      (
+        <div className="h-screen container mx-auto px-5 flex justify-center items-center px-5 md:px-10">
+            <div>
+            <h1 className="text-center font-bold text-2xl md:text-5xl uppercase">You do not added Product!</h1>
+            </div>
+          </div>
+      )
+      }
     </div>
   );
 };
