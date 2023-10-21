@@ -113,9 +113,10 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className=" uppercase font-bold text-3xl">
+          <Link className=" uppercase flex gap-2 font-bold text-3xl">
+            <span><img className="h-8 w-8" src="../logo.png" alt="" /></span>
             <span className="text-secondary-color">Wat</span>ches
-          </a>
+          </Link>
         </div>
         {/* Desktop */}
         <div className="navbar-center hidden lg:flex">
