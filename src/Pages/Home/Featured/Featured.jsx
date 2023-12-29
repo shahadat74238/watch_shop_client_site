@@ -55,7 +55,7 @@ const Featured = () => {
           data-aos-duration="1000" className="flex justify-center">
           <img
             className="md:h-80 lg:h-96"
-            src="https://wpbingosite.com/wordpress/wrish/wp-content/uploads/2021/08/clock.png"
+            src="https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
             alt=""
           />
         </div>

@@ -1,7 +1,7 @@
 
 const Banner = () => {
     return (
-        <div className="md:h-screen h-[60vh] bg-[url('https://wpbingosite.com/wordpress/wrish/wp-content/uploads/2021/10/slider3.jpg')] bg-top bg-cover bg-no-repeat">
+        <div className="md:h-screen h-[60vh] bg-[url('https://monawatch.com/wp-content/uploads/2022/09/offer-banner-50off.jpg')] bg-top bg-cover bg-no-repeat">
             <div className="bg-black/40 md:h-screen h-[60vh]">
             <div className="container mx-auto flex px-5 md:px-10 items-center  h-full">
                 <div className="">
