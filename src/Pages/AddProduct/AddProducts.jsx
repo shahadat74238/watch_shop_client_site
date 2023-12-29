@@ -46,7 +46,7 @@ const AddProducts = () => {
   };
 
   return (
-    <div className="bg-[url('https://wpbingosite.com/wordpress/wrish/wp-content/uploads/2021/10/slider3.jpg')] bg-cover bg-no-repeat bg-center">
+    <div className="bg-[url('https://twobrokewatchsnobs.com/wp-content/uploads/2022/09/bulova-devil-diver-best-dive-watch-1024x646.png')] bg-cover bg-no-repeat bg-center">
       <div className="min-h-screen bg-black/50 pb-10">
         <div className="h-[40vh]   bg-cover bg-no-repeat bg-center">
           <h1 className="text-3xl pt-[20vh] text-white font-bold text-center uppercase">

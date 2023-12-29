@@ -1,11 +1,12 @@
 import { useLoaderData } from "react-router-dom";
-import Banner from "./Banner";
 import Watch from "./Watch";
 import Brand from "./Brand";
 import Featured from "./Featured/Featured";
+import Banner from "./Banner";
 
 const Home = () => {
   const watches = useLoaderData();
+
 
   return (
     <div>
@@ -14,7 +15,6 @@ const Home = () => {
         <div className="container px-5 md:px-10 mx-auto my-20 grid gap-6 ">
           <Brand />
         </div>
-        <div></div>
         <div>
           <Featured />
         </div>

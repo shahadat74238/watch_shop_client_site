@@ -23,7 +23,7 @@ const Slider = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <div className="md:h-screen h-[60vh] bg-[url('https://wpbingosite.com/wordpress/wrish/wp-content/uploads/2021/08/slider-1-1.jpg')] bg-top bg-cover bg-no-repeat">
+            <div className="md:h-screen h-[60vh] bg-[url('https://media.istockphoto.com/id/1065329058/photo/premium-mens-watch-on-hand-close-up.jpg?s=612x612&w=0&k=20&c=VdpUac8ObrDZZ0I8OCD_vOxPqyOUCa3cM8zoqXsPkuE=')] bg-top bg-cover bg-no-repeat">
               <div className="bg-black/60 md:h-screen h-[60vh]">
                 <div className="container mx-auto flex justify-center px-5 md:px-10 items-center  h-full">
                   <div className="text-center">
@@ -49,7 +49,7 @@ const Slider = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="md:h-screen h-[60vh] bg-[url('https://wpbingosite.com/wordpress/wrish/wp-content/uploads/2021/08/slider-2-4.jpg')] bg-top bg-cover bg-no-repeat">
+            <div className="md:h-screen h-[60vh] bg-[url('https://thumbs.dreamstime.com/b/luxury-watches-27723897.jpg')] bg-top bg-cover bg-no-repeat">
               <div className="bg-black/60 md:h-screen h-[60vh]">
                 <div className="container mx-auto justify-center flex px-5 md:px-10 items-center  h-full">
                   <div className="text-center">
@@ -75,7 +75,7 @@ const Slider = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="md:h-screen h-[60vh] bg-[url('https://wpbingosite.com/wordpress/wrish/wp-content/uploads/2021/08/slider-3-4.jpg')] bg-top bg-cover bg-no-repeat">
+            <div className="md:h-screen h-[60vh] bg-[url('https://hodinkee.imgix.net/uploads/images/85867caf-a6ca-45ec-8abc-eae50c39cfd0/WODHEROFINAL4.jpg?ixlib=rails-1.1.0&fm=jpg&q=55&auto=format&usm=12')] bg-top bg-cover bg-no-repeat">
               <div className="bg-black/60 md:h-screen h-[60vh]">
                 <div className="container mx-auto flex justify-center px-5 md:px-10 items-center  h-full">
                   <div className="text-center">

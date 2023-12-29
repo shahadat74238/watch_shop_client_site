@@ -48,7 +48,7 @@ const UpdateWatch = () => {
   };
 
   return (
-    <div className="bg-[url('https://wpbingosite.com/wordpress/wrish/wp-content/uploads/2021/10/slider1.jpg')] bg-cover bg-no-repeat bg-center">
+    <div className="bg-[url('https://www.esquireme.com/cloud/2021/09/08/BjTwYX8x-Seiko-Automatic-Diver-(1)-1200x800.jpg')] bg-cover bg-no-repeat bg-center">
       <div className="min-h-screen bg-black/50 pb-10">
         <div className="h-[40vh]   bg-cover bg-no-repeat bg-center">
           <h1 className="text-3xl pt-[20vh] text-white font-bold text-center uppercase">
