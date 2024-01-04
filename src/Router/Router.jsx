@@ -11,6 +11,7 @@ import WatchDetails from "../Pages/WatchDetails/WatchDetails";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
 import UpdateWatch from "../Pages/UpdateWatch/UpdateWatch";
 import AllWatches from "../Pages/AllWatches/AllWatches";
+import About from "../Pages/About/About";
 
 const router = createBrowserRouter([
   {
@@ -81,6 +82,11 @@ const router = createBrowserRouter([
             <MyCard />
           </PrivetRoute>
         ),
+       
+      },
+      {
+        path: "/about",
+        element:<About />
        
       },
       {

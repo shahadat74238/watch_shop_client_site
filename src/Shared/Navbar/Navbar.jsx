@@ -82,6 +82,18 @@ const Navbar = () => {
           My Card
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive
+              ? "border-b-2 border-secondary-color text-secondary-color"
+              : " duration-200 hover:text-secondary-color hover:border-b-2 hover:border-secondary-color"
+          }
+        >
+          About Us
+        </NavLink>
+      </li>
     </>
   );
 
