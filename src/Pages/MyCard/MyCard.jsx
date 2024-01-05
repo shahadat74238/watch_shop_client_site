@@ -53,7 +53,7 @@ const MyCard = () => {
       {!cardWatch.length > 0 ?  (
         <div className="h-screen container mx-auto px-5 flex justify-center items-center  md:px-10">
           <div>
-            <h1 className="text-center font-bold text-2xl md:text-5xl uppercase">
+            <h1 className="text-center text-primary-color dark:text-white font-bold text-2xl md:text-5xl uppercase">
               You do not added Product!
             </h1>
           </div>
@@ -61,13 +61,13 @@ const MyCard = () => {
         :
         (
           <div className="container mx-auto px-5 md:px-10 my-20">
-            <h1 className="uppercase text-center text-3xl font-bold my-10">
+            <h1 className="uppercase text-primary-color dark:text-white text-center text-3xl font-bold my-10">
               My Card Products
             </h1>
             <div className="overflow-x-auto dark:text-white">
               <table className="table">
                 {/* head */}
-                <thead className="dark:text-white">
+                <thead className="dark:text-white text-black">
                   <tr>
                     <th>SL</th>
                     <th>Name</th>
@@ -77,7 +77,7 @@ const MyCard = () => {
                   </tr>
                 </thead>
                 {cardWatch.map((product, index) => (
-                  <tbody key={product._id}>
+                  <tbody key={product._id} className="text-black dark:text-white">
                     {/* row 1 */}
                     <tr>
                       <th>{index + 1}</th>

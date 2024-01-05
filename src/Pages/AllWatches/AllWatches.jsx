@@ -17,8 +17,8 @@ const AllWatches = () => {
       <div className="container my-10 md:my-20 mx-auto px-5 md:px-10">
         <Brand />
         <div className="mt-10 md:mt-20">
-          <h1 className="text-4xl dark:text-white uppercase font-bold mb-10 text-center ">
-            New Watches
+          <h1 className="text-4xl text-primary-color dark:text-white uppercase font-bold mb-10 text-center ">
+            All Watches
           </h1>
           <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2  gap-6">
             {watches.map((watch) => (
@@ -37,11 +37,11 @@ const AllWatches = () => {
                     />
                   </div>
                   <div className="text-center  pt-3">
-                    <h3 className="text-2xl dark:text-white font-bold">{watch.brand}</h3>
+                    <h3 className="text-2xl text-primary-color dark:text-white font-bold">{watch.brand}</h3>
                     <h1 className="text-lg text-secondary-color my-2 font-semibold">
                       {watch.name}
                     </h1>
-                    <p className="font-bold dark:text-white">${watch.price}</p>
+                    <p className="font-bold text-primary-color dark:text-white">${watch.price}</p>
                     <div className="mt-3">
                       <Link to={`/watches/${watch._id}`}>
                         <button className="primary-btn text-white w-full">

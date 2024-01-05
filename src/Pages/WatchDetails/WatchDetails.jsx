@@ -55,7 +55,7 @@ const WatchDetails = () => {
                     <MdOutlineStarOutline className="text-2xl text-yellow-500" />
                   }
                   fullSymbol={
-                    <MdOutlineStarPurple500 className="text-2xl text-yellow-500 font" />
+                    <MdOutlineStarPurple500 className="text-2xl text-yellow-500 " />
                   }
                   readonly
                   initialRating={rating}
